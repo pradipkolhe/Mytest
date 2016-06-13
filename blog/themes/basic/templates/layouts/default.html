@@ -2,14 +2,18 @@
 <html>
 <head>
     <title>{{entry.title}}</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/style.css">
-    <script type="text/javascript" src="/static/js/script.js"></script>
+    <link type="text/css" rel="stylesheet" href="/static/css/task-layout.css">
+    <!--<script type="text/javascript" src="/static/js/script.js"></script>-->
 </head>
 <body>
-    {% include "partials/header.html" %}
 
-    {% block content %}{% endblock %}
+    <div class="wrapper">
+        {% include "partials/header.html" %}
 
-    {% include "partials/footer.html" %}
+        {% block content %}{% endblock %}
+
+        {% include "partials/footer.html" %}
+    </div>
+
 </body>
 </html>

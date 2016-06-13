@@ -1,0 +1,21 @@
+{% set side_bar_new = get("side_bar") %}
+
+
+<div class="sidebar-sec">
+    {% for sidetitle in side_bar_new.sidebar_section %}
+    <div class="sideloop">
+        <div class="nav-title">
+            <h2>{{sidetitle.title}}</h2>
+        </div>
+
+
+        <div class="nav-link">
+            <ul>
+                {% for sidenav in sidetitle.menu %}
+                    <li><a href="{{sidenav.link}}">{{sidenav.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        </div>
+        {% endfor %}
+</div>

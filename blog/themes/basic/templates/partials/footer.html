@@ -1,3 +1,10 @@
 {# If you have a "Content Type" for footer in Built.io Contentstack then use get() view helper to retrieve footer entry. #}
 {# e.g. set footer = get("footer_content_type_id") #}
 {# And then render footer values using the {{footer.field_name}} #}
+{% set footer = get("footer") %}
+
+<div class="footer">
+    <footer>
+        {{footer.footer.name}}
+    </footer>
+</div>

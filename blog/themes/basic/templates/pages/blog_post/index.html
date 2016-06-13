@@ -1,30 +1,37 @@
 {% extends "layouts/default.html" %}
 
 {% block content %}
-<section>
-    <h1>{{entry.title}}</h1>
-    
-			<ul>
-			<li><b>Title:</b> {{entry.title}}</li>
-			<li><b>URL:</b> {{entry.url}}</li>
-			<li><b>section:</b>
-				{% set entry_section = entry.section %}
-				<ul>
-				{% for _entry_section in entry_section -%}
-					<li><b>{{loop.index}}</b>:<br>
-						<ul>
-						<li><b>Title:</b> {{_entry_section.title}}</li>
-						<li><b>Name and Date:</b> {{_entry_section.name_and_date}}</li>
-						<li>
-							<b>Image(url):</b> <a href='{{getAssetUrl(_entry_section.image)}}'>{{_entry_section.image.filename}}</a>
-						</li>
-						<li><b>content:</b> {{_entry_section.content}}</li>
-						</ul>
-					</li>
-				{%- endfor %}
-				</ul>
-			</li>
-			</ul>
-    <p style="color: #555; font-size: 14px">Note: Template automatically generated at "/home/pradip/Mytest/blog/themes/basic/templates/pages/blog_post/index.html"</p>
-</section>
+
+<div class="section">
+
+	<div class="left">
+
+		{% for content in entry.section %}
+		<div class="loop-content">
+			<div class="article-title">
+				<a href="/blog-details"><h1>{{content.title}}</h1></a>
+				<i>{{content.name_and_date}}{{entry.created_at}}</i>
+			</div>
+
+			<div class="image">
+				<img src="{{getAssetUrl(content.image)}}" alt="Image" />
+			</div>
+
+			<div class="containt">
+				{{content.content}}
+			</div>
+
+		</div>
+		{% endfor %}
+
+	</div>
+
+	<div class="right">
+
+		{% include "partials/side_bar.html" %}
+
+	</div>
+
+</div>
+
 {% endblock %}

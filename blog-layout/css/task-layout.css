@@ -132,6 +132,15 @@ list-style-type: square;
     /*color: #000;*/
     text-decoration: none;
 }
+.loop-content {
+    margin-bottom: 50px;
+}
+.sidebar-sec{
+    margin: 40px 0 0 0;
+}
+.sidebar-sec:first-child{
+    margin:0;
+}
 footer {
     background-color: black;
     color: white;
