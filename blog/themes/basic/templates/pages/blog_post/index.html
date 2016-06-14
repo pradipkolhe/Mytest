@@ -5,24 +5,21 @@
 <div class="section">
 
 	<div class="left">
-
-		{% for content in entry.section %}
 		<div class="loop-content">
 			<div class="article-title">
-				<a href="/blog-details"><h1>{{content.title}}</h1></a>
-				<i>{{content.name_and_date}}{{entry.created_at}}</i>
+				<a href="#"><h1>{{entry.section.title}}</h1></a>
+				<i>{{entry.section.name_and_date}}{{entry.created_at}}</i>
 			</div>
 
 			<div class="image">
-				<img src="{{getAssetUrl(content.image)}}" alt="Image" />
+				<img src="{{getAssetUrl(entry.section.image)}}" alt="Image" />
 			</div>
 
 			<div class="containt">
-				{{content.content}}
+				{{entry.section.content}}
 			</div>
 
 		</div>
-		{% endfor %}
 
 	</div>
 

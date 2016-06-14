@@ -8,9 +8,7 @@ module.exports = exports = {
         }
     ],
     plugins: {
-        "Myplugin":{
-
-        }
+        "myplugin":{}
     },
     contentstack: {
         api_key: "bltb2597ae3e7125795",

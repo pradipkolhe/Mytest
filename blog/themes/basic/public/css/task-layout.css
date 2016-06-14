@@ -48,7 +48,7 @@
     height: auto;
     width: 100%;
     padding: 2px;
-    background-color: #eeeeee;
+    background-color: linen;
     max-width: 960px;
     margin: 0 auto;
     overflow: auto;
@@ -94,6 +94,7 @@
     margin: 10px;
     overflow: auto;
     display: inline-block;
+    /*background-color: linen;*/
 }
 
 .left {
@@ -153,9 +154,9 @@
     /*color: #000;*/
     text-decoration: none;
 }
-.loop-content {
-    margin-bottom: 50px;
-}
+/*.loop-content {*/
+    /*margin-bottom: 50px;*/
+/*}*/
 .sidebar-sec{
     margin: 40px 0 0 0;
 }

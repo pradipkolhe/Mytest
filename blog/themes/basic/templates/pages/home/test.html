@@ -1,0 +1,39 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+
+<div class="section">
+
+    <div class="left">
+        {% set entry_article_abstract = entry.article.abstract %}
+        {% for _entry_article_abstract in entry_article_abstract.section -%}
+        <div class="loop-content">
+            <div class="article-title">
+                <h1><a href="{{ _entry_article_abstract.url }}">{{ _entry_article_abstract.title }}</a></h1>
+                <i>{{ _entry_article_abstract.name_and_date}}{{_entry_article_abstract.created_at}}</i>
+            </div>
+
+            <div class="image">
+                <img src="{{getAssetUrl(_entry_article_abstract.section.image)}}" alt="Image" />
+            </div>
+
+            <div class="containt">
+                {{_entry_article_abstract.abstract}}
+            </div>
+            <div class="button">
+                <a href="{{ _entry_article_abstract.url }}"><img style="width: 96px" src="{{getAssetUrl(entry.article.button)}}" alt="Image" />
+                </a>
+            </div>
+        </div>
+
+        {%- endfor %}
+    </div>
+
+    <div class="right">
+
+        {% include "partials/side_bar.html" %}
+
+    </div>
+
+</div>
+{% endblock %}
